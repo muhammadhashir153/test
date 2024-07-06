@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="formstyle.css">
+</head>
+<body>
+    <form id="loginForm" onsubmit="login(event)">
+        <h1>Login</h1>
+       
+        <label for="username">username:</label>
+        <br>
+        <input type="text"   id="username" name="username" >
+         <br>
+       <label for="email">email:</label>
+        <br>
+        <input type="email"   id="email" name="email">
+         <br>
+        <label for="password">password:</label>
+        <br>
+        <input type="password"   id="password" name="password" >
+        <br>
+        <label for="remember">remember Me:</label>
+        <input type="checkbox" id="remember" name="remember" > 
+        <br>
+        <br>
+        <button type="submit">Login</button>
+            </form>
+        <div id="output"></div>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+            console.log("Working");
+
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var remember = document.getElementById("remember").checked;
+    
+            var output = "username: " + username + "<br>" +
+                         "email: " + email + "<br>" +
+                         "password: " + password + "<br>" +
+                         "remember : " + remember;
+            
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
